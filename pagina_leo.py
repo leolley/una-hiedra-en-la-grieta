@@ -139,16 +139,16 @@ selected = option_menu(
     options=["Sobre mí", "Después de leer", "Intelectuales en el mundo", "Versos sueltos"], 
     icons=['person-heart', 'pencil-square', 'globe-americas', 'journal-richtext'], 
     menu_icon="cast", 
-    default_index=0,
+    default_index=1,
     orientation="horizontal",
     styles={
         "container": {
             "padding": "15px 0px", # Más aire para que no se corte
-            "background-color": "#FCFBF7", # Tu crema de fondo
+            "background-color": "#FAF7F2", # Tu crema de fondo
             "border-radius": "0px"
         },
         "icon": {
-            "color": "#9a62a5", 
+            "color": "#7A3E48", 
             "font-size": "18px"
         }, 
         "nav-link": {
@@ -162,7 +162,7 @@ selected = option_menu(
             "--hover-color": "#F3EAF4"
         },
         "nav-link-selected": {
-            "background-color": "#4B0082", # Tu morado profundo
+            "background-color": "#7A3E48", # Tu morado profundo
             "color": "white",
             "font-weight": "500", # Un poquito más de grosor solo cuando está seleccionada
             "border-radius": "8px" # Bordes redondeados para el botón seleccionado
@@ -195,7 +195,7 @@ if selected == "Sobre mí":
     título = """
     ¡Hola! Soy Natalí C. Cardoza Rojas
     """
-    st.markdown(f"<div style='text-align: center; font-size: 40px; color: #9a62a5; font-weight: bold'>{título}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='text-align: center; font-size: 40px; color: #7A3E48; font-weight: bold'>{título}</div>", unsafe_allow_html=True)
     
     st.write("")
     
@@ -285,53 +285,11 @@ if selected == "Sobre mí":
 
 # AQUÍ EMPIEZA LA SECCIÓN DE LECTURA
 
-# GLOSARIO EN PAUSA
-# Sigue el formato "palabra": "definición",
-    glosario_filosofico = {
-        "neoliberalismo": "Sistema que busca reducir la intervención del Estado en la economía. Con capitalismo neoliberal, nos referimos a la versión contemporánea del capitalismo que adopta las políticas neoliberales de libre mercado. Se caracteriza por la desregulación económica, la privatización de empresas y servicios públicos, la apertura comercial y la reducción del papel del Estado en la economía.",
-        "segunda ola": "Movimiento feminista de los años 60-80 centrado en  la agenda feminista más allá del sufragio, abarcando desigualdades sociales y de facto, derechos reproductivos, la familia, el lugar de la mujer en el trabajo y la sexualidad.",
-        "patriarcado": "Sistema social y político basado en la primacía de los hombres. En él, la autoridad y los recursos están concentrados en manos masculinas, lo que impone un orden de dominación sobre las mujeres y define «lo propio» de cada género. Como señala Cinzia Arruzza, el término se usa para enfatizar que la opresión de género es un fenómeno constante y estructural (arraigada en las instituciones y relaciones sociales), no un hecho aislado de actitudes personales. ",
-        "capitalismo": "Sistema económico basado en la propiedad privada y el mercado. Su dinámica fundamental es la inversión de capital para obtener beneficios, lo que permite relaciones centradas en la producción, el intercambio y el trabajo asalariado.",
-        "emancipación": "Proceso histórico por el cual las mujeres han obtenido y buscado asegurar la igualdad legal, política, laboral, social y familiar que antes se les negaba. En este sentido, la emancipación femenina es la liberación de las diversas formas de opresión patriarcal que tradicionalmente las subordinaban.",
-        "división sexual del trabajo": "Reparto o especialización de las tareas sociales según el género. En la mayoría de las sociedades patriarcales a los hombres se le atribuyen las tareas productivas (trabajo remunerado, espacio público) y a las mujeres las tareas reproductivas(cuidados, crianza, trabajo doméstico). ",
-        "igualdad salarial": "Principio según el cual personas que realizan trabajos de igual valor o productividad deben recibir la misma remuneración, sin importar su género u otras condiciones. En la práctica, busca corregir las brechas salariales de género asegurando que una mujer reciba igual salario que un hombre por el mismo trabajo.",
-        "representación simbólica": "Presencia visible de mujeres en roles o espacios públicos que tiene más carácter emblemático que real. Por ejemplo, la designación de mujeres en cargos honoríficos o imágenes oficiales puede cumplir una función de “símbolo” de igualdad, aunque no transforme sustancialmente el poder político o las condiciones materiales de las mujeres.",
-        "feministas marxistas": "Corriente feminista que considera que la raíz de la opresión de las mujeres está en el sistema capitalista. Desde esta perspectiva, el patriarcado se entiende como una superestructura alimentada por las relaciones económicas de producción. Las feministas marxistas, como Silvia Federici, examinan la opresión de las mujeres como algo inherente al capitalismo, heredando el análisis materialista de Marx. Para ellas, la emancipación pasa por transformar las relaciones económicas y sociales de forma anticapitalista.",
-        "feministas socialistas": "Corriente teórica y política que crítica tanto al capitalismo como al patriarcado. Coincide con el feminismo marxista en que la liberación de las mujeres requiere un cambio económico profundo, y con el feminismo radical en que hay que cuestionar las estructuras patriarcales, sin quedarle “solo” a lo político o cultural. Las feministas socialistas abogan por reestructurar la sociedad (por ejemplo, eliminando la propiedad privada sobre la familia y colectivizando las tareas domésticas) para acabar con las causas materiales y culturales de la desigualdad de género.",
-        "feministas radicales": "Corriente surgida en los años 60-70 que enfatiza la transformación profunda de la sociedad para abolir el patriarcado. Analizan la dominación masculina como un fenómeno estructural y sistémico, no solo como desigualdad en leyes, y consideran que el patriarcado (a saber, el conjunto de normas e instituciones que dan poder a los hombres) es la forma primaria de opresión de las mujeres.",
-        "opresión de género": "Conjunto de desigualdades estructurales, discriminación y violencia que sufren las personas por su género (en especial las mujeres y las disidencias sexuales) dentro de un sistema patriarcal. Implica la subordinación sistemática de las mujeres en ámbitos legales, económicos, simbólicos y cotidianos, generando una posición desventajosa mantenida por la cultura y las instituciones sociales.",
-        "patriarcado moderno": "Concepto que describe las formas contemporáneas del patriarcado en el capitalismo avanzado. En esta versión, la familia nuclear heterosexual funciona como eje de reproducción de la fuerza de trabajo, asignando a las mujeres las tareas de cuidado y reproduciendo privilegios masculinos tanto en el hogar como en el mercado laboral. Es decir, el patriarcado moderno se instituye junto al capitalismo mediante la división entre producción (asociada a lo masculino) y reproducción (asociada a lo femenino).",
-        "contrato social": "Teoría política clásica (Rousseau, Hobbes, Locke) que explica el origen del Estado por un pacto voluntario entre individuos. Según esta idea, las personas acuerdan renunciar su libertad natural para constituir un poder común que garantice derechos y deberes. En concreto, el contrato social propone que todos los miembros de la sociedad aceptan reglas y autoridades a cambio de protección y orden.",
-        "contrato sexual": "Término acuñado por Carole Pateman para denunciar que el contrato social liberal esconde un pacto patriarcal implícito que subyugó a las mujeres desde el principio. Según esta teoría, los contratos civiles (como el matrimonio) están diseñados para asegurar el derecho sexual y reproductivo de los hombres, manteniendo a las mujeres subordinadas e inhibiendo su autonomía.",
-        "colonialismo": "Sistema de dominación político y económico en el que un Estado extranjero se impone sobre un territorio ajeno. El colonialismo implica controlar y explotar directamente los recursos y poblaciones de la colonia. Históricamente, se caracteriza por la colonización física o administración colonial (imperios europeos en América, África, etc.) y por im"
-        "estructuras culturales ajenas a las sociedades dominadas.",
-        "matriz heteronormativa": "Conjunto de normas y prácticas sociales que asumen la heterosexualidad y la familia nuclear heterosexual como modelo natural o normal. En una matriz heteronormativa se presupone que la orientación sexual y la identidad de género deben alinearse (sexo-biológico masculino = identidad masculina, relaciones heterosexuales, roles tradicionales, etc.). Esto invisibiliza y margina otras identidades sexuales y de género, relegándolas como <b>anormales</b> en la cultura dominante.",
-        "igualdad": "Principio por el cual todas las personas son equiparadas en derechos y obligaciones, sin privilegios o discriminaciones arbitrarias. En la cuestión del género, la igualdad exige que mujeres y hombres disfruten de las mismas oportunidades, derechos y libertades.",
-        "sistema económico": "Conjunto de instituciones, normas, mecanismos y relaciones que organizan la actividad económica de una sociedad. Define cómo se producen, distribuyen e intercambian bienes y servicios, quién posee los medios de producción y qué papel tiene el Estado. Ejemplos de sistemas económicos son el capitalismo de mercado, el socialismo planificado o las economías mixtas.",
-        "obligación biológica": "Idea (acepción crítica) de que a las mujeres les corresponde por naturaleza una tarea reproductiva obligatoria, como la maternidad y el cuidado. En el feminismo se rechaza esta <b>obligación biológica</b>: se argumenta que los roles reproductivos no son meramente inescapables por biología, sino que están influidos por factores sociales y deben ser una elección.",
-        "determinismo biológico": "Doctrina según la cual el comportamiento humano y las diferencias sociales (incluyendo la desigualdad de género) están fijados por la biología heredada; es decir, las normas y jerarquías sociales reflejan diferencias innatas entre individuos. El determinismo biológico afirma que rasgos y roles sociales dependen de los genes, idea que las ciencias contemporáneas rechazan, pues reconocen la compleja interacción entre biología y ambiente.",
-        "esencialismo de mujer": "Creencia de que existe una esencia innata y universal que define a todas las mujeres (por ejemplo, una supuesta naturaleza maternal o pasiva). Este enfoque asume que el género femenino es una categoría fija y natural. En contraste, las teorías de género lo critican: argumentan que las características atribuidas a las «mujeres» cambian históricamente y culturalmente, por lo que no hay una esencia femenina única.",
-        "género": "Categoría sociocultural que clasifica a las personas según rasgos asociados tradicionalmente a la masculinidad o la feminidad. No coincide necesariamente con el sexo biológico.",
-        "desigualdades de género": "Fenómeno social, jurídico y cultural de discriminación estructural que pone un género (usualmente el masculino) en posición de privilegio sobre otro. Se basa en roles sociales tradicionales de varones y mujeres.",
-        "constructo social": "Entidad o idea creada culturalmente que no existe por sí sola en la naturaleza, sino por acuerdo convencional. Se sostiene porque la sociedad acepta reglas o normas que le dan existencia.",
-        "innatas": "Cualidades o comportamientos presentes desde el nacimiento, sin necesidad de aprendizaje, ligados a la dotación biológica heredada.",
-        "relaciones de poder": "Dinámicas sociales en las que individuos o grupos ejercen control, autoridad o influencia sobre otros, determinando desigualdades y jerarquías en la sociedad.",
-        "pater familias": "Término del derecho romano que designa al jefe o cabeza de familia (asociado al varón). En contextos patriarcales, simboliza la autoridad paterna tradicional.",
-        "masculinidad hegemónica": "Forma de masculinidad dominante que legitima el patriarcado. Según Connell, es la configuración culturalmente idealizada de la masculinidad que sostiene la posición social superior de los hombres y la subordinación de las mujeres. ",
-        "masculinidades no hegemónicas": "Todas las formas de ser varón que no corresponden al patrón hegemónico. Incluyen masculinidades subordinadas (con rasgos asociados a lo femenino), cómplices (que se benefician de la hegemonía sin liderarla) y otras identidades alternativas.",
-        "virilidad": "Conjunto de cualidades asociadas a la hombría o masculinidad madura, como fuerza, vigor y vigorosidad.",
-        "personaje disruptivo": "Individuo que rompe con normas establecidas y subvierte los símbolos o reglas dominantes, provocando cambios en la estructura social o simbólica.",
-        "ruptura simbólica": "Acto de cuestionar o quebrar significados culturales preestablecidos (como estereotipos de género) mediante la alteración de símbolos y representaciones dominantes.",
-        "estructuras sociales": "Ordenamiento de normas, instituciones y relaciones que organizan una sociedad. Incluye familia, clases, leyes, costumbres, etc."
-}
-
-## EL GLOSARIO QUEDA EN STANDBY, A VER SI LUISA ME AYUDA U.U
-
 elif selected == "Después de leer":
     st.markdown("""
     <h1 style="
         font-size:65px;
-        color:#9a62a5;
+        color:#7A3E48;
         font-weight:900;
         text-align:center;
         margin-bottom:20px;
@@ -360,7 +318,7 @@ elif selected == "Después de leer":
         st.markdown("""
         <h2 style="
             font-size:25px;
-            color:#9a62a5;
+            color:#7A3E48;
             font-weight:900;
             text-align:center;
             margin-bottom:18px;
@@ -371,7 +329,12 @@ elif selected == "Después de leer":
         st.markdown("""
         <div style="text-align: justify; font-size:18px;">
         <p>
-        Hablar del feminismo de la segunda ola sin hablar del capitalismo es, sencillamente, 
+        Hablar del feminismo de la 
+        <span title="Movimiento feminista de los años 60-80 centrado en  la agenda feminista más allá del sufragio, abarcando desigualdades sociales y de facto, derechos reproductivos, la familia, el lugar de la mujer en el trabajo y la sexualidad."
+        style="color:#7A3E48"> 
+        <b>segunda ola</b>
+        </span> 
+        sin hablar del capitalismo es, sencillamente, 
         imposible. Ambos procesos históricos crecieron en paralelo y, aunque muchas veces se 
         los presenta como fuerzas opuestas, la relación entre ellos es más compleja e incómoda 
         de lo que solemos admitir. No podemos negar que la segunda ola avanzó en proyectos 
@@ -385,8 +348,11 @@ elif selected == "Después de leer":
         “¿Fue mera coincidencia que la segunda ola feminista y el neoliberalismo prosperasen 
         unidos? ¿O había una perversa y soterrada afinidad electiva entre ellos?” (p. 148). 
         Planteado de otro modo: <b>¿por qué no reconocer que algunas de las demandas de la 
-        segunda ola feminista terminaron convergiendo con las transformaciones del capitalismo 
-        neoliberal?</b> El objetivo de este escrito no busca desacreditar los logros del feminismo,
+        segunda ola feminista terminaron convergiendo con las transformaciones del 
+        <span title="Versión contemporánea del capitalismo que adopta las políticas neoliberales de libre mercado. Se caracteriza por la desregulación económica, la privatización de empresas y servicios públicos, la apertura comercial y la reducción del papel del Estado en la economía. Esto suele ir acompañado de flexibilización laboral y menor protección social."
+        style="color:#7A3E48"> 
+        <b>capitalismo neoliberal</b>?
+        </span></b> El objetivo de este escrito no busca desacreditar los logros del feminismo,
         sino detenernos a pensar en sus límites históricos. 
         </p>
         <p>
@@ -429,10 +395,19 @@ elif selected == "Después de leer":
         st.markdown("""
         <div style="text-align: justify; font-size:18px;">
         <p>
-        Así, mientras que el feminismo exigía emancipación, el capitalismo reorganizaba el 
+        Además de este aspecto de la exclusión, consideremos que, mientras que el feminismo exigía 
+        <span title="Proceso histórico por el cual las mujeres han obtenido y buscado asegurar la igualdad legal, política, laboral, social y familiar que antes se les negaba. En este sentido, la emancipación femenina es la liberación de las diversas formas de opresión patriarcal que tradicionalmente las subordinaban."
+        style="color:#7A3E48"> 
+        <b>emancipación,</b>
+        </span> 
+        el capitalismo reorganizaba el 
         trabajo y promovía el modelo de doble ingreso familiar. Aquí aparece la tensión central,
         pues la incorporación masiva de mujeres al mercado laboral, consolidada por la segunda 
-        ola en la década de 1960, no eliminó la división sexual del trabajo 
+        ola en la década de 1960, no eliminó la 
+        <span title="Reparto o especialización de las tareas sociales según el género. En la mayoría de las sociedades patriarcales a los hombres se le atribuyen las tareas productivas (trabajo remunerado, espacio público) y a las mujeres las tareas reproductivas (cuidados, crianza, trabajo doméstico)."
+        style="color:#7A3E48"> 
+        <b>división sexual del trabajo</b>
+        </span>  
         —uno de los objetivos principales del feminismo—; caso contrario, <b>la duplicó</b>. 
         ¿Cuál es, entonces, el resultado que aún persiste hoy en día? El trabajo doméstico y 
         de cuidados sigue recayendo de manera desproporcionada sobre aquellas mujeres cuyas 
@@ -447,8 +422,16 @@ elif selected == "Después de leer":
         <p>
         Para Fraser, el problema no fue haber luchado por reconocimiento o redistribución, 
         <b>sino haber separado dimensiones que, en realidad, están entrelazadas.</b> Es decir, la 
-        justicia de género no puede reducirse ni a igualdad salarial ni a representación 
-        simbólica; requiere pensar las estructuras económicas, culturales y políticas como un 
+        justicia de género no puede reducirse ni a 
+        <span title="Principio según el cual personas que realizan trabajos de igual valor o productividad deben recibir la misma remuneración, sin importar su género u otras condiciones. En la práctica, busca corregir las brechas salariales de género asegurando que una mujer reciba igual salario que un hombre por el mismo trabajo."
+        style="color:#7A3E48"> 
+        <b>igualdad salarial</b>
+        </span> 
+        ni a 
+        <span title="Presencia visible de mujeres en roles o espacios públicos que tiene más carácter emblemático que real. Por ejemplo, la designación de mujeres en cargos honoríficos o imágenes oficiales puede cumplir una función de símbolo de igualdad, aunque no transforme sustancialmente el poder político o las condiciones materiales de las mujeres."
+        style="color:#7A3E48"> 
+        <b>representación simbólica;</b>
+        </span> requiere pensar las estructuras económicas, culturales y políticas como un 
         todo. Por ejemplo, cuando se habla del trabajo doméstico, durante mucho tiempo se lo 
         consideró una tarea “natural” de las mujeres y, por ello, ni siquiera se pensaba que 
         debía ser remunerado o redistribuido. Aquí vemos cómo el problema no es solo económico 
@@ -459,13 +442,33 @@ elif selected == "Después de leer":
         la agenda política.
         </p>
         <p>
-        Las feministas marxistas y socialistas profundizaron esta crítica. Por un lado, 
+        Las 
+        <span title="Corriente feminista que considera que la raíz de la opresión de las mujeres está en el sistema capitalista. Desde esta perspectiva, el patriarcado se entiende como una superestructura alimentada por las relaciones económicas de producción. Las feministas marxistas, como Silvia Federici, examinan la opresión de las mujeres como algo inherente al capitalismo, heredando el análisis materialista de Marx. Para ellas, la emancipación pasa por transformar las relaciones económicas y sociales de forma anticapitalista."
+        style="color:#7A3E48"> 
+        <b>feministas marxistas</b>
+        </span> 
+        y 
+        <span title="Corriente teórica y política que crítica tanto al capitalismo como al patriarcado. Coincide con el feminismo marxista en que la liberación de las mujeres requiere un cambio económico profundo, y con el feminismo radical en que hay que cuestionar las estructuras patriarcales, sin quedarle solo a lo político o cultural. Las feministas socialistas abogan por reestructurar la sociedad (por ejemplo, eliminando la propiedad privada sobre la familia y colectivizando las tareas domésticas) para acabar con las causas materiales y culturales de la desigualdad de género."
+        style="color:#7A3E48"> 
+        <b>socialistas</b>
+        </span> 
+        profundizaron esta crítica. Por un lado, 
         Cinzia Arruzza (2016) cuestionó la idea de que el capitalismo sea “neutral” respecto 
-        a la opresión de género. La filósofa feminista exploró las teorías en torno a las 
+        a la 
+        <span title="Conjunto de desigualdades estructurales, discriminación y violencia que sufren las personas por su género (en especial las mujeres y las disidencias sexuales) dentro de un sistema patriarcal. Implica la subordinación sistemática de las mujeres en ámbitos legales, económicos, simbólicos y cotidianos, generando una posición desventajosa mantenida por la cultura y las instituciones sociales."
+        style="color:#7A3E48">
+        <b>opresión de género.</b>
+        </span>
+        La filósofa feminista exploró las teorías en torno a las 
         relaciones entre desigualdad de género y capitalismo, para demostrar que este último 
         necesita del patriarcado para formar un único sistema que separe a hombres y mujeres 
         en función de la lógica capitalista. Por su parte, Silvia Federici (2015) evidenció 
-        cómo el patriarcado moderno se consolidó junto con el capitalismo, especialmente a 
+        cómo el 
+        <span title="Concepto que describe las formas contemporáneas del patriarcado en el capitalismo avanzado. En esta versión, la familia nuclear heterosexual funciona como eje de reproducción de la fuerza de trabajo, asignando a las mujeres las tareas de cuidado y reproduciendo privilegios masculinos tanto en el hogar como en el mercado laboral. Es decir, el patriarcado moderno se instituye junto al capitalismo mediante la división entre producción (asociada a lo masculino) y reproducción (asociada a lo femenino)."
+        style="color:#7A3E48">
+        <b>patriarcado moderno</b>
+        </span> 
+        se consolidó junto con el capitalismo, especialmente a 
         través de la asignación del trabajo reproductivo a las mujeres. Esta ancla de la 
         reproducción permite al capitalismo asignarles una tarea que no es la misma para los 
         varones; es decir, además de participar en la producción económica, las mujeres han 
@@ -473,20 +476,46 @@ elif selected == "Después de leer":
         cuidar el hogar y sostenerlo— sin que estas tareas sean reconocidas o remuneradas. 
         Por ende, la división radical proletaria, impuesta con la llegada del capitalismo, 
         define lo que debe ser y hacer la mujer. En palabras de Carole Pateman (1995), el 
-        contrato social pudo desarrollarse ocultando este otro contrato sexual que relegó a 
-        las mujeres a la esfera privada.
+        <span title="Teoría política clásica (Rousseau, Hobbes, Locke) que explica el origen del Estado por un pacto voluntario entre individuos. Según esta idea, las personas acuerdan renunciar su libertad natural para constituir un poder común que garantice derechos y deberes. En concreto, el contrato social propone que todos los miembros de la sociedad aceptan reglas y autoridades a cambio de protección y orden."
+        style="color:#7A3E48">
+        <b>contrato social</b>
+        </span> 
+        pudo desarrollarse ocultando este otro 
+        <span title="Término acuñado por Carole Pateman para denunciar que el contrato social liberal esconde un pacto patriarcal implícito que subyugó a las mujeres desde el principio. Según esta teoría, los contratos civiles (como el matrimonio) están diseñados para asegurar el derecho sexual y reproductivo de los hombres, manteniendo a las mujeres subordinadas e inhibiendo su autonomía."
+        style="color:#7A3E48">
+        <b>contrato sexual</b>
+        </span> 
+        que relegó a las mujeres a la esfera privada.
         </p>
         <p>
         Desde esta perspectiva, la opresión de género no es un residuo premoderno que el 
-        capitalismo podría superar fácilmente —sin mencionar, en este apartado, el colonialismo 
-        y la matriz heteronormativa que profundizan las jerarquías de género—. Siguiendo todo 
+        capitalismo podría superar fácilmente —sin mencionar, en este apartado, el 
+        <span title="Sistema de dominación político y económico en el que un Estado extranjero se impone sobre un territorio ajeno. El colonialismo implica controlar y explotar directamente los recursos y poblaciones de la colonia. Históricamente, se caracteriza por la colonización física o administración colonial (imperios europeos en América, África, etc.) y por imponer estructuras culturales ajenas a las sociedades dominadas."
+        style="color:#7A3E48">
+        <b>colonialismo</b>
+        </span> 
+        y la 
+        <span title="Conjunto de normas y prácticas sociales que asumen la heterosexualidad y la familia nuclear heterosexual como modelo natural o normal. En una matriz heteronormativa se presupone que la orientación sexual y la identidad de género deben alinearse (sexo-biológico masculino = identidad masculina, relaciones heterosexuales, roles tradicionales, etc.). Esto invisibiliza y margina otras identidades sexuales y de género, relegándolas como anormales en la cultura dominante."
+        style="color:#7A3E48">
+        <b>matriz heteronormativa</b>
+        </span> 
+        que profundizan las jerarquías de género—. Siguiendo todo 
         el panorama anterior, cuestionemos, entonces, nuestro horizonte actual. ¿Qué tipo de 
-        igualdad buscamos las feministas hoy? ¿Uno contestatario y radical frente al capitalismo
+        <span title="Si tomamos en cuenta que por igualdad nos referimos al principio por el cual todas las personas son equiparadas en derechos y obligaciones, sin privilegios o discriminaciones arbitrarias, en la cuestión del género, la igualdad exige que mujeres y hombres disfruten de las mismas oportunidades, derechos y libertades."
+        style="color:#7A3E48">
+        <b>igualdad</b>
+        </span>
+        buscamos las feministas hoy? ¿Uno contestatario y radical frente al capitalismo
         neoliberal? ¿O uno que exija políticas y busque una integración plena en las lógicas 
         del mercado? Estas preguntas nos obligan a excluir propuestas para quedarnos con la 
         que consideramos que será la solución al problema; sin embargo, 
         <b>¿no existe el riesgo de que este discurso de igualdad, que buscan los feminismos, 
-        termine adaptándose a las prioridades del propio sistema económico?</b>
+        termine adaptándose a las prioridades del propio 
+        <span title="Conjunto de instituciones, normas, mecanismos y relaciones que organizan la actividad económica de una sociedad. Define cómo se producen, distribuyen e intercambian bienes y servicios, quién posee los medios de producción y qué papel tiene el Estado. Ejemplos de sistemas económicos son el capitalismo de mercado, el socialismo planificado o las economías mixtas."
+        style="color:#7A3E48">
+        <b>sistema económico?</b>
+        </span>
+        </b>
         En la medida en que exijamos ser incluidas en la fuerza de trabajo y ocupar espacios 
         tradicionalmente masculinos —como vía para alcanzar independencia económica frente a 
         los varones—, esta idea de “igualdad” puede terminar significando solo la posibilidad 
@@ -499,10 +528,19 @@ elif selected == "Después de leer":
         <p>
         Algunas propuestas, como la de Shulamith Firestone (1976), imaginaron una revolución 
         con nuevas tecnologías que permitan liberar a las mujeres de la función reproductiva,
-        de modo que, si se prescinde de la obligación biológica, las mujeres no se encontrarán 
+        de modo que, si se prescinde de la 
+        <span title="Idea (acepción crítica) de que a las mujeres les corresponde por naturaleza una tarea reproductiva obligatoria, como la maternidad y el cuidado. En el feminismo se rechaza esta obligación biológica: se argumenta que los roles reproductivos no son meramente inescapables por biología, sino que están influidos por factores sociales y deben ser una elección."
+        style="color:#7A3E48">
+        <b>obligación biológica,</b>
+        </span>
+        las mujeres no se encontrarán 
         más en una posición subordinada. Desde la postura de Firestone, la reproducción ya no 
-        sería el destino de las mujeres. Otras corrientes, en diálogo con las socialistas y 
-        radicales, apuestan por reorganizar radicalmente el trabajo y la vida social, pues se 
+        sería el destino de las mujeres. Otras corrientes, en diálogo con las feministas socialistas y 
+        <span title="Corriente surgida en los años 60-70 que enfatiza la transformación profunda de la sociedad para abolir el patriarcado. Analizan la dominación masculina como un fenómeno estructural y sistémico, no solo como desigualdad en leyes, y consideran que el patriarcado (a saber, el conjunto de normas e instituciones que dan poder a los hombres) es la forma primaria de opresión de las mujeres."
+        style="color:#7A3E48">
+        <b>radicales,</b>
+        </span>
+        apuestan por reorganizar radicalmente el trabajo y la vida social, pues se 
         trata de un cambio estructural, tanto de la economía, la política y lo social. Sin embargo,
         quizá el desafío no consista en elegir una única estrategia, sino en mantener un 
         diálogo crítico de perspectivas diversas entre mujeres blancas y mujeres 
@@ -514,17 +552,24 @@ elif selected == "Después de leer":
         <p>
         La historia del feminismo de la segunda ola no es una historia de fracaso, sino de 
         tensiones productivas y debates internos. Hemos dado un gran avance al cuestionar el 
-        determinismo biológico y el supuesto esencialismo de mujer. Es preciso, ahora, 
-        cuestionar cuál es esa igualdad que buscamos dentro de las estructuras actuales y 
-        en el contexto neoliberal. 
-        <b>O si es que en realidad necesitamos seguir pensando en una.</b> 
+        <span title="Doctrina según la cual el comportamiento humano y las diferencias sociales (incluyendo la desigualdad de género) están fijados por la biología heredada; es decir, las normas y jerarquías sociales reflejan diferencias innatas entre individuos. El determinismo biológico afirma que rasgos y roles sociales dependen de los genes, idea que las ciencias contemporáneas rechazan, pues reconocen la compleja interacción entre biología y ambiente."
+        style="color:#7A3E48">
+        <b>determinismo biológico</b>
+        </span> 
+        y el supuesto 
+        <span title="Creencia de que existe una esencia innata y universal que define a todas las mujeres (por ejemplo, una supuesta naturaleza maternal o pasiva). Este enfoque asume que el género femenino es una categoría fija y natural. En contraste, las teorías de género lo critican: argumentan que las características atribuidas a las «mujeres» cambian históricamente y culturalmente, por lo que no hay una esencia femenina única."
+        style="color:#7A3E48">
+        <b>esencialismo de mujer.</b>
+        </span>
+        Es preciso, ahora, cuestionar cuál es esa igualdad que buscamos dentro de las estructuras actuales y 
+        en el contexto neoliberal. <b>O si es que en realidad necesitamos seguir pensando en una.</b> 
         Mostrar estas contradicciones no debilita al feminismo. Al contrario, lo fortalece, 
         pues una teoría feminista que no examina sus propias alianzas y límites corre el riesgo
         de reproducir aquello que pretendía cuestionar.
         </p> 
         <hr style="margin-top:40px;">
 
-        <p style="font-size:20px; font-weight:bold; color:#9a62a5;">
+        <p style="font-size:20px; font-weight:bold; color:#7A3E48;">
         Bibliografía
         </p>
 
@@ -567,8 +612,6 @@ elif selected == "Después de leer":
         </div>
         """, unsafe_allow_html=True) #Aquí termina mi reseña 1
 
-#EN ORDEN POR AQUÍ, SOLO FALTA VER EL GLOSARIO.
-
 #Con los disclaimers, coloco <p style="font-size:14px; color:#777; margin-top:40px;">
 
 #Aquí comienza mi reseña 2
@@ -576,7 +619,7 @@ elif selected == "Después de leer":
         st.markdown("""
         <h2 style="
             font-size:25px;
-            color:#9a62a5;
+            color:#7A3E48;
             font-weight:900;
             text-align:center;
             margin-bottom:18px;
@@ -628,7 +671,12 @@ elif selected == "Después de leer":
         st.markdown("""
         <div style="text-align: justify; font-size:18px;"> 
         <p>
-        El género como categoría de análisis es una herramienta necesaria para comprender las dinámicas en nuestras interacciones humanas. 
+        El 
+        <span title="Categoría sociocultural que clasifica a las personas según rasgos asociados tradicionalmente a la masculinidad o la feminidad. Con el género no nos referimos, necesariamente, al sexo biológico."
+        style="color:#7A3E48">
+        <b>género</b>
+        </span> 
+        como categoría de análisis es una herramienta necesaria para comprender las dinámicas en nuestras interacciones humanas. 
         Además, nos invita a cuestionar los roles impuestos por la sociedad y, junto ello, la construcción histórica, racial y patriarcal de los mismos. 
         En este apartado, demostraré estos dos puntos, el de análisis y cuestionamiento, con el cortometraje español <i>El orden de las cosas</i> (2010), dirigido por los hermanos Esteban Alenda. 
         Este producto audiovisual nos permite dar cuenta, en un aproximado de 20 minutos, que la violencia, muchas veces, no se muestra de forma evidente. 
@@ -665,24 +713,40 @@ elif selected == "Después de leer":
         aunque la relación entre ellos está fuertemente marcada por el control y la intimidación. 
         </p>       
         <p> 
-        Se trata de una subordinación sostenida por las desigualdades de género. En ella, 
-        las mujeres son excluidas del espacio público —históricamente masculinizado— y 
-        confinadas al ámbito doméstico, siendo receptoras pasivas, administradoras del hogar 
-        y dependientes económicamente. Así, estos roles exigen a las mujeres cumplir con 
-        estas condiciones devenidas del constructo social (y, en ese sentido, no innatas) 
-        para seguir reproduciendo los estereotipos femeninos.
-        Esta idea nos lo recuerda Carole Pateman (2000), ya que sugiere que la violencia no 
-        es simplemente un problema individual y privado entre dos personas. 
-        Al contrario, forma parte de un sistema de relaciones de poder que se reproduce dentro
-        de la familia y fuera en la sociedad. De esta manera, si las mujeres no son consideradas
-        ciudadanas con derechos plenos, ¿cómo el Estado pretende garantizar su bienestar? Para que su invisibilización sea permanente en la 
+        Se trata de una subordinación sostenida por las 
+        <span title="Fenómeno social, jurídico y cultural de discriminación estructural que pone un género (usualmente el masculino) en posición de privilegio sobre otro. Se basa en roles sociales tradicionales de varones y mujeres."
+        style="color:#7A3E48">
+        <b>desigualdades de género.</b>
+        </span>
+        Históricamente, las mujeres han sido excluidas del espacio público (tradicionalmente 
+        masculinizado) y relegadas al ámbito doméstico, donde se las posiciona como receptoras
+        pasivas, administradoras del hogar y dependientes económicamente. Estos roles no son 
+        naturales, sino el resultado de 
+        <span title="Entidad o idea creada culturalmente que no existe por sí sola en la naturaleza, sino por acuerdo convencional. Se sostiene porque la sociedad acepta reglas o normas que le dan existencia."
+        style="color:#7A3E48">
+        <b>construcciones sociales</b>
+        </span> 
+        que se imponen y reproducen, reforzando los estereotipos femeninos. Como nos lo recuerda Carole Pateman (2000), 
+        esta dinámica permite comprender que la violencia no es simplemente un problema 
+        individual o privado entre dos personas. Al contrario, forma parte de un sistema de 
+        <span title="Dinámicas sociales en las que individuos o grupos ejercen control, autoridad o influencia sobre otros, determinando desigualdades y jerarquías en la sociedad."
+        style="color:#7A3E48">
+        <b>relaciones de poder</b>
+        </span> 
+        que se reproduce dentro de la familia y fuera en la sociedad. 
+        De esta manera, si las mujeres no son consideradas ciudadanas con derechos plenos, 
+        ¿cómo el Estado pretende garantizar su bienestar? Para que su invisibilización sea permanente en la 
         ciudadanía, instituciones y políticas, es necesario que se ubiquen en el ámbito privado 
         siendo cuidadoras y dependientes, mientras que el Estado refuerza la división sexual.
         </p> 
         <p> 
         En esta lógica patriarcal, la familia aparece como un espacio donde las jerarquías de 
         género se “naturalizan”. Los hombres ocupan el lugar de autoridad y control, como el 
-        pater familias, mientras que a las mujeres se les asigna el rol de cuidadoras y 
+        <span title="Término del derecho romano que designa al jefe o cabeza de familia (siempre varón). En contextos patriarcales, simboliza la autoridad paterna tradicional."
+        style="color:#7A3E48">
+        <b>pater familias,</b>
+        </span>
+        mientras que a las mujeres se les asigna el rol de cuidadoras y 
         administradoras del hogar. El personaje de Julia encarna precisamente esta posición y 
         su identidad se reduce a <i>ser madre de</i> Marquitos, <i>esposa de</i> Marcos y ama de casa, 
         rasgos identitarios que evidencian dependencia y vulnerabilidad. 
@@ -716,7 +780,12 @@ elif selected == "Después de leer":
         es lo que siempre te ha hecho falta”</i>. Vemos así que la violencia aparece no 
         solo como una acción individual, sino como una expectativa social vinculada a ciertos 
         modelos de masculinidad. La socióloga Raewyn Connell (1997) ha explicado este fenómeno a través del concepto 
-        de "masculinidad hegemónica": una forma dominante de ser hombre que se legitima 
+        de 
+        <span title="Forma de masculinidad dominante que legitima el patriarcado. Según Connell, es la configuración culturalmente idealizada de la masculinidad que sostiene la posición social superior de los hombres y la subordinación de las mujeres."
+        style="color:#7A3E48">
+        <b>masculinidad hegemónica:</b>
+        </span> 
+        una forma dominante de ser hombre que se legitima 
         mediante la autoridad, la fuerza y el control sobre hombres “más débiles” y 
         mujeres, demostrando constantemente su aceptación y legitimación dentro del 
         patriarcado. <b>El género, más allá de sustentarse en una base biológica, es una 
@@ -724,7 +793,12 @@ elif selected == "Después de leer":
         sentirse constantemente evaluado por ese ideal masculino, especialmente frente a 
         sus hermanos. Por ello, no es casual que se muestren incluso con una apariencia 
         distinta a él; es decir, son más altos que él y andan con “las corbatas bien puestas”, 
-        de modo que la virilidad y respetabilidad se gana dominando a los más marginados, 
+        de modo que la 
+        <span title="Conjunto de cualidades asociadas a la hombría o masculinidad madura, como fuerza, vigor y vigorosidad."
+        style="color:#7A3E48">
+        <b>virilidad</b>
+        </span> 
+        y respetabilidad se gana dominando a los más marginados, 
         incluyendo a las mujeres.
         </p>
         <p>
@@ -747,11 +821,21 @@ elif selected == "Después de leer":
         compartidas por quienes viven dentro de él, de modo que, si salimos de él, 
         <i>“puede ser peor”</i> como le dice una de las cuñadas a Julia. Sin embargo, 
         también es necesario enfatizar que, a lo largo de la historia, vemos a Marquitos 
-        como un personaje disruptivo. Él crece dentro de este ambiente familiar marcado por 
+        como un 
+        <span title="Individuo que rompe con normas establecidas y subvierte los símbolos o reglas dominantes, provocando cambios en la estructura social o simbólica."
+        style="color:#7A3E48">
+        <b>personaje disruptivo.</b>
+        </span> 
+        Él crece dentro de este ambiente familiar marcado por 
         la violencia. Su padre intenta enseñarle el mismo modelo de masculinidad que aprendió 
         de generaciones anteriores: ser fuerte, imponer autoridad y mantener el control; 
         aun así, su hijo rechaza este mandato. Desde el momento en que descubre los moretones 
-        de su madre se produce una ruptura simbólica. El juguete de avión que llevaba en la 
+        de su madre se produce una 
+        <span title="Acto de cuestionar o quebrar significados culturales preestablecidos (como estereotipos de género) mediante la alteración de símbolos y representaciones dominantes."
+        style="color:7A3E48"> 
+        <b>ruptura simbólica.</b>
+        </span> 
+        El juguete de avión que llevaba en la 
         mano cae al suelo y se rompe, como símbolo del quiebre de su infancia y, al mismo 
         tiempo, <b>la posibilidad de que ese ciclo de violencia no continúe necesariamente en 
         la siguiente generación</b>. Así lo mostró al crecer y tener la mayoría de edad para 
@@ -766,7 +850,12 @@ elif selected == "Después de leer":
         (des)orden de las cosas. Lo que se presenta como un orden natural es, en realidad, el 
         resultado de relaciones históricas de poder. 
         La violencia que ocurre dentro del hogar no es simplemente un asunto privado; 
-        <b>forma parte de estructuras sociales más amplias.</b> Tal como se muestra al final 
+        <b>forma parte de 
+        <span title="Ordenamiento relativamente estable de normas, instituciones y relaciones que organizan una sociedad. Incluye familia, clases, leyes, costumbres, etc."
+        style="color:#7A3E48">
+        <b>estructuras sociales</b>
+        </span> 
+        más amplias.</b> Tal como se muestra al final 
         del cortometraje, Julia sale del mar y la última escena proyecta varias tinas vacías, 
         sugiriendo que muchas otras mujeres, cuyas experiencias de violencia permanecen ocultas
         dentro de los espacios privados, salen a la luz cuando ya es tarde. Por eso, se 
@@ -811,7 +900,12 @@ elif selected == "Después de leer":
         de la familia, la cultura y las normas sociales. En muchos contextos patriarcales, 
         la violencia se mantiene allí sobre estructuras sociales que la normalizan y cuyos 
         agentes (los hombres) aprenden a ejercerla como legítima y en contra de las mujeres, 
-        personas trans, masculinidades no hegemónicas. Como lo desarrollaría Rita Segato en 
+        personas trans, 
+        <span title="Todas las formas de ser varón que no corresponden al patrón hegemónico. Incluyen masculinidades subordinadas (con rasgos asociados a lo femenino), cómplices (que se benefician de la hegemonía sin liderarla) y otras identidades alternativas."
+        style="color:#7A3E48">
+        <b>masculinidades no hegemónicas.</b>
+        </span> 
+        Como lo desarrollaría Rita Segato en 
         <i>Contra-pedagogías de la crueldad</i> (2018), si vemos un escenario de violencia 
         machista, este no es un acto individual o que se ubique solamente en vínculos 
         domésticos, pues proviene de un escenario cultural que organiza a sus individuos 
@@ -885,7 +979,7 @@ elif selected == "Intelectuales en el mundo":
     st.markdown("""
     <h1 style="
         font-size:60px;
-        color:#9a62a5;
+        color:#7A3E48;
         font-weight:900;
         text-align:center;
         margin-bottom:20px;
@@ -984,7 +1078,7 @@ elif selected == "Intelectuales en el mundo":
     st.markdown("""
     <h2 style="
         font-size:30px;
-        color:#9a62a5;
+        color:#7A3E48;
         font-weight:900;
         text-align:center;
         margin-bottom:20px;
@@ -1018,7 +1112,7 @@ elif selected == "Intelectuales en el mundo":
         st.markdown(f"""
         <h2 style="
             font-size:28px;
-            color:#9a62a5;
+            color:#7A3E48;
             font-weight:900;
             text-align:center;
             margin-bottom:5px;
@@ -1035,7 +1129,7 @@ elif selected == "Intelectuales en el mundo":
 
     with col2:
         st.markdown("""
-        <h3 style="color:#9a62a5;">Datos personales</h3>
+        <h3 style="color:#7A3E48;">Datos personales</h3>
         """, unsafe_allow_html=True)
         st.markdown(f"""
         <div style="font-size:16px; line-height:1.6; text-align:justify;">
@@ -1049,7 +1143,7 @@ elif selected == "Intelectuales en el mundo":
 
     with col3:
         st.markdown("""
-        <h3 style="color:#9a62a5;">Obras principales</h3>
+        <h3 style="color:#7A3E48;">Obras principales</h3>
         """, unsafe_allow_html=True)
 
         obras = fila["Obras"]
@@ -1120,7 +1214,7 @@ elif selected == "Versos sueltos":
     st.markdown("""
     <h1 style="
         font-size:60px;
-        color:#9a62a5;
+        color:#7A3E48;
         font-weight:900;
         text-align:center;
         margin-bottom:20px;
@@ -1153,7 +1247,7 @@ elif selected == "Versos sueltos":
                 font-size:18px;
                 line-height:1.8;
                 margin-left:120px;
-                border-left:2px solid #9a62a5;
+                border-left:2px solid #7A3E48;
                 padding-left:20px;
             ">
             {p['texto']}
