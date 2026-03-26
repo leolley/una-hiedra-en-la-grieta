@@ -303,7 +303,8 @@ if selected == "Sobre mí":
         "patriarcado moderno": "Concepto que describe las formas contemporáneas del patriarcado en el capitalismo avanzado. En esta versión, la familia nuclear heterosexual funciona como eje de reproducción de la fuerza de trabajo, asignando a las mujeres las tareas de cuidado y reproduciendo privilegios masculinos tanto en el hogar como en el mercado laboral. Es decir, el patriarcado moderno se instituye junto al capitalismo mediante la división entre producción (asociada a lo masculino) y reproducción (asociada a lo femenino).",
         "contrato social": "Teoría política clásica (Rousseau, Hobbes, Locke) que explica el origen del Estado por un pacto voluntario entre individuos. Según esta idea, las personas acuerdan renunciar su libertad natural para constituir un poder común que garantice derechos y deberes. En concreto, el contrato social propone que todos los miembros de la sociedad aceptan reglas y autoridades a cambio de protección y orden.",
         "contrato sexual": "Término acuñado por Carole Pateman para denunciar que el contrato social liberal esconde un pacto patriarcal implícito que subyugó a las mujeres desde el principio. Según esta teoría, los contratos civiles (como el matrimonio) están diseñados para asegurar el derecho sexual y reproductivo de los hombres, manteniendo a las mujeres subordinadas e inhibiendo su autonomía.",
-        "colonialismo": "Sistema de dominación político y económico en el que un Estado extranjero se impone sobre un territorio ajeno. El colonialismo implica controlar y explotar directamente los recursos y poblaciones de la colonia. Históricamente, se caracteriza por la colonización física o administración colonial (imperios europeos en América, África, etc.) y por imponer estructuras culturales ajenas a las sociedades dominadas.",
+        "colonialismo": "Sistema de dominación político y económico en el que un Estado extranjero se impone sobre un territorio ajeno. El colonialismo implica controlar y explotar directamente los recursos y poblaciones de la colonia. Históricamente, se caracteriza por la colonización física o administración colonial (imperios europeos en América, África, etc.) y por im"
+        "estructuras culturales ajenas a las sociedades dominadas.",
         "matriz heteronormativa": "Conjunto de normas y prácticas sociales que asumen la heterosexualidad y la familia nuclear heterosexual como modelo natural o normal. En una matriz heteronormativa se presupone que la orientación sexual y la identidad de género deben alinearse (sexo-biológico masculino = identidad masculina, relaciones heterosexuales, roles tradicionales, etc.). Esto invisibiliza y margina otras identidades sexuales y de género, relegándolas como <b>anormales</b> en la cultura dominante.",
         "igualdad": "Principio por el cual todas las personas son equiparadas en derechos y obligaciones, sin privilegios o discriminaciones arbitrarias. En la cuestión del género, la igualdad exige que mujeres y hombres disfruten de las mismas oportunidades, derechos y libertades.",
         "sistema económico": "Conjunto de instituciones, normas, mecanismos y relaciones que organizan la actividad económica de una sociedad. Define cómo se producen, distribuyen e intercambian bienes y servicios, quién posee los medios de producción y qué papel tiene el Estado. Ejemplos de sistemas económicos son el capitalismo de mercado, el socialismo planificado o las economías mixtas.",
@@ -1026,20 +1027,42 @@ elif selected == "Intelectuales en el mundo":
         </h2>
         """, unsafe_allow_html=True)
 
-    # --- BLOQUE 1: IDENTIDAD + FOTO ---
-    col1, col2 = st.columns([1,2])
+    # --- BLOQUE 1: IDENTIDAD + FOTO + OBRAS + IMAGEN ---
+    col1, col2, col3, col4 = st.columns([1,1,1,1])
 
     with col1:
         st.image(fila["Foto de la filósofa (Buscador)"], width=180)
 
     with col2:
+        st.markdown("""
+        <h3 style="color:#9a62a5;">Datos personales</h3>
+        """, unsafe_allow_html=True)
         st.markdown(f"""
-        <div style="font-size:15px; line-height:1.6; text-align:justify;">
-        <b>Nacionalidad:</b> {fila["Nacionalidad"]}<br>
-        <b>Lugar de nacimiento:</b> {fila["Lugar de nacimiento"]}<br>
+        <div style="font-size:16px; line-height:1.6; text-align:justify;">
+        <b>Nacionalidad:</b> {fila["Nacionalidad"]}<br><br>
+        <b>Lugar de nacimiento:</b> {fila["Lugar de nacimiento"]}<br><br>
         <b>Áreas:</b> {fila["Áreas de investigación"]}
         </div>
         """, unsafe_allow_html=True)
+    
+    import re
+
+    with col3:
+        st.markdown("""
+        <h3 style="color:#9a62a5;">Obras principales</h3>
+        """, unsafe_allow_html=True)
+
+        obras = fila["Obras"]
+
+        lista_obras = re.findall(r'.+?\(\d{4}\)', obras)
+        lista_obras = [obra.strip().lstrip(", ") for obra in lista_obras]
+        lista_obras = list(dict.fromkeys(lista_obras))
+
+        for obra in lista_obras:
+            st.markdown(f"- {obra}")
+
+    with col4:
+        st.image(fila["Foto de la obra"], width=140)
 
     st.write("")
 
@@ -1075,31 +1098,6 @@ elif selected == "Intelectuales en el mundo":
     </div>
     """, unsafe_allow_html=True)
     
-    st.write("")
-
-    # --- BLOQUE 3: OBRAS + IMAGEN ---
-    col3, col4 = st.columns([2,1])
-    
-    import re
-
-    with col3:
-        st.markdown("""
-        <h3 style="color:#9a62a5;">Obras principales</h3>
-        """, unsafe_allow_html=True)
-
-        obras = fila["Obras"]
-
-        lista_obras = re.findall(r'.+?\(\d{4}\)', obras)
-        lista_obras = [obra.strip().lstrip(", ") for obra in lista_obras]
-        lista_obras = list(dict.fromkeys(lista_obras))
-
-        for obra in lista_obras:
-            st.markdown(f"- {obra}")
-
-            
-    with col4:
-        st.image(fila["Foto de la obra"], width=140)
-
     st.write("")
 
     # --- BLOQUE 4: VIDEOS ---
