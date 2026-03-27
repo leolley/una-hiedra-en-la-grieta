@@ -136,7 +136,7 @@ st.markdown("""
 
 selected = option_menu(
     menu_title=None, 
-    options=["Sobre mí", "Después de leer", "Intelectuales en el mundo", "Versos sueltos"], 
+    options=["Sobre mí", "Después de leer", "Conocimientos situados", "Versos sueltos"], 
     icons=['person-heart', 'pencil-square', 'globe-americas', 'journal-richtext'], 
     menu_icon="cast", 
     default_index=1,
@@ -973,9 +973,9 @@ elif selected == "Después de leer":
 
 #Aquí cierro mi reseña 2 con el markdown  
 
-# EMPIEZA LA SECCIÓN DE INTELECTUALES EN EL MUNDO
+# EMPIEZA LA SECCIÓN DE CONOCIMIENTOS SITUADOS
     
-elif selected == "Intelectuales en el mundo":
+elif selected == "Conocimientos situados":
     st.markdown("""
     <h1 style="
         font-size:60px;
@@ -984,7 +984,7 @@ elif selected == "Intelectuales en el mundo":
         text-align:center;
         margin-bottom:20px;
     ">
-    Intelectuales en el mundo
+    Conocimientos situados
     </h1>
     """, unsafe_allow_html=True)
 
