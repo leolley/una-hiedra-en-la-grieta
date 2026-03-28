@@ -136,7 +136,7 @@ st.markdown("""
 
 selected = option_menu(
     menu_title=None, 
-    options=["Sobre mí", "Después de leer", "Conocimientos situados", "Versos sueltos"], 
+    options=["Sobre mí", "Conocimientos situados", "Después de leer", "Versos sueltos"], 
     icons=['person-heart', 'pencil-square', 'globe-americas', 'journal-richtext'], 
     menu_icon="cast", 
     default_index=1,
@@ -195,7 +195,7 @@ if selected == "Sobre mí":
     título = """
     ¡Hola! Soy Natalí C. Cardoza Rojas
     """
-    st.markdown(f"<div style='text-align: center; font-size: 40px; color: #7A3E48; font-weight: bold'>{título}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='text-align: center; font-size: 50px; color: #7A3E48; font-weight: bold'>{título}</div>", unsafe_allow_html=True)
     
     st.write("")
     
@@ -219,10 +219,10 @@ if selected == "Sobre mí":
         <p>
         Me interesa cuestionar las formas en que se construye el conocimiento, las relaciones de poder que lo atraviesan 
         y las maneras en que estas se reproducen en nuestra vida diaria. Por eso, aquí encontrarás reflexiones sobre
-        feminismos, epistemologías contemporáneas, lógica y argumentación, siempre conectadas con la política peruana y la cultura pop.
+        feminismos, epistemologías contemporáneas, lógica informal y argumentación, siempre conectadas con la política peruana y la cultura pop.
         </p>
         <p>
-        Además de ser teórica y activista, soy mugiwara de corazón, <i>amateur</i> en botánica y amante de la música en sus múltiples formas.
+        Además de ser teórica y activista, soy <i>mugiwara</i> de corazón, <i>amateur</i> en botánica y amante de la música en sus múltiples formas.
         Este espacio nace como una forma de salir de la academia sin abandonar el pensamiento riguroso. 
         Porque sí, <b>la filosofía no es para unos pocos</b>: nos permite incomodarnos, entendernos más y transformar lo que vivimos.
         </p>
@@ -239,7 +239,7 @@ if selected == "Sobre mí":
     with col3:
         texto_2 = """
         <p>
-        ¿Por qué una hiedra en la grieta? Durante mucho tiempo 
+        <b>¿Por qué una hiedra en la grieta?</b> Durante mucho tiempo 
         <a href="https://www.bbc.com/mundo/ciencia_tecnologia/2010/05/100524_hiedra_contaminacion_lp">
         se creyó que la hiedra era una amenaza
         </a> 
@@ -288,7 +288,7 @@ if selected == "Sobre mí":
 elif selected == "Después de leer":
     st.markdown("""
     <h1 style="
-        font-size:65px;
+        font-size:60px;
         color:#7A3E48;
         font-weight:900;
         text-align:center;
@@ -992,7 +992,7 @@ elif selected == "Conocimientos situados":
     <div style="text-align: justify; font-size:16px;">
     <p>
     <b>Este mapa nace de una constatación simple: la historia de la filosofía (y del pensamiento crítico) ha sido construida desde una perspectiva parcial, marcada por la exclusión sistemática de otras voces y experiencias. 
-    Aquí se reúnen filósofas, teóricas y pensadoras cuyas ideas han cuestionado esa ausencia, analizando el poder, el conocimiento, el cuerpo y la justicia desde perspectivas que incomodan y transforman. 
+    Aquí se reúnen filósofas, teóricas y pensadoras cuyas ideas han cuestionado esa ausencia, analizando el poder, el conocimiento, el cuerpo y la justicia. 
     Aunque muchas de estas autoras han reflexionado sobre el género y las desigualdades, el mapa no se limita a ello: busca visibilizar la participación de las mujeres en la producción de conocimiento en sentido amplio. 
     Actualmente, incluye más de 70 mujeres de diversas tradiciones y contextos, y se encuentra en constante crecimiento. En la medida en que nuevas lecturas, investigaciones y hallazgos amplíen este recorrido, el mapa seguirá incorporando más voces
     (¡también acepto sugerencias!).</b>
@@ -1227,7 +1227,7 @@ elif selected == "Versos sueltos":
     st.markdown("""
     <div style="text-align: justify; font-size:16px;">
     <p><b>La memoria es frágil, así que opto por guardar aquí aquellos poemas que me motivan 
-    a seguir construyendo las ideas que defiendo y aspiro. Todos ellos tienen un núcleo en común: 
+    a seguir construyendo las ideas que defiendo y aspiro. Algunos más personales, otros con un núcleo en común: 
     desde actos de resistencia, hasta el derecho inalienable a no ser "iguales”.</b></p>
     </div>
     """, unsafe_allow_html=True)
@@ -1277,7 +1277,8 @@ st.markdown("""
     font-size:18px;
     color:#555;
 ">
-    <p> Si quieres compartir ideas: </p> 📩 ncardozar@gmail.com 
+    <p> Si quieres compartir ideas: </p> 
+    <p> 📩 ncardozar@gmail.com </p>
 </div>
 """, unsafe_allow_html=True)
 # br : saltos de línea
