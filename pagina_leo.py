@@ -991,7 +991,7 @@ elif selected == "Conocimientos situados":
     st.markdown("""
     <div style="text-align: justify; font-size:16px;">
     <p>
-    <b>Este mapa nace de una constatación simple: la historia de la filosofía (y del pensamiento crítico) ha sido construida desde una perspectiva parcial, marcada por la exclusión sistemática de otras voces y experiencias. 
+    <b>Este mapa nace de una constatación simple: la historia de la filosofía ha sido construida desde una perspectiva parcial, marcada por la exclusión sistemática de otras voces y experiencias. 
     Aquí se reúnen filósofas, teóricas y pensadoras cuyas ideas han cuestionado esa ausencia, analizando el poder, el conocimiento, el cuerpo y la justicia. 
     Aunque muchas de estas autoras han reflexionado sobre el género y las desigualdades, el mapa no se limita a ello: busca visibilizar la participación de las mujeres en la producción de conocimiento en sentido amplio. 
     Actualmente, incluye más de 70 mujeres de diversas tradiciones y contextos, y se encuentra en constante crecimiento. En la medida en que nuevas lecturas, investigaciones y hallazgos amplíen este recorrido, el mapa seguirá incorporando más voces
@@ -1083,7 +1083,7 @@ elif selected == "Conocimientos situados":
         text-align:center;
         margin-bottom:20px;
     ">
-    Buscador de autora o pensadora
+    ¡Indaga por aquí!
     </h2>
     """, unsafe_allow_html=True)
 
@@ -1096,7 +1096,7 @@ elif selected == "Conocimientos situados":
         index_default = 0
 
     nombre = st.selectbox(
-        "¡Indaga por aquí!",
+        " ",
         lista_nombres,
         index=index_default,
         key="autor_seleccionado" # 🔗 sincroniza si el usuario cambia manualmente
