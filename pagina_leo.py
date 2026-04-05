@@ -137,7 +137,7 @@ st.markdown("""
 selected = option_menu(
     menu_title=None, 
     options=["Sobre mí", "Conocimientos situados", "Después de leer", "Versos sueltos"], 
-    icons=['person-heart', 'pencil-square', 'globe-americas', 'journal-richtext'], 
+    icons=['person-heart', 'globe-americas', 'pencil-square', 'journal-richtext'], 
     menu_icon="cast", 
     default_index=1,
     orientation="horizontal",
